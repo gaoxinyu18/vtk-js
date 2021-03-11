@@ -220,7 +220,7 @@ function vtkOpenGLCellArrayBufferObject(publicAPI, model) {
     const size = array.length;
     let caboCount = 0;
     for (let index = 0; index < size; ) {
-      caboCount += countFunc(array[index], array);
+      caboCount += Math.max(countFunc(array[index], array), 0);
       index += array[index] + 1;
     }
 
